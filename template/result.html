@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+</head>
+<body>
+    <div class="result-box">
+        <h2>Prediction Result</h2>
+        {% if predicted_class == 1 %}
+            <div class="status canceled">Booking is likely to be <b>CANCELED</b>.</div>
+        {% else %}
+            <div class="status not-canceled">Booking is likely to be <b>NOT CANCELED</b>.</div>
+        {% endif %}
+        <a href="/">← Make Another Prediction</a>
+    </div>
+</body>
+</html>

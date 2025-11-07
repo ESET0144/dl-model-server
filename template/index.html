@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hotel Booking Cancellation Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 40px;
+        }
+        h2 {
+            color: #343a40;
+        }
+        form {
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            max-width: 700px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 6px;
+            border: 1px solid #ced4da;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h2>Hotel Booking Cancellation Predictor</h2>
+    <form method="post" action="/predict">
+        
+        <label>Hotel Type:</label>
+        <select name="hotel">
+            <option value="Resort Hotel">Resort Hotel</option>
+            <option value="City Hotel">City Hotel</option>
+        </select>
+
+        <label>Lead Time:</label>
+        <input type="number" step="1" name="lead_time" >
+
+        <label>Arrival Year:</label>
+        <input type="number" name="arrival_date_year" >
+
+        <label>Arrival Month:</label>
+        <select name="arrival_date_month">
+            <option>January</option><option>February</option><option>March</option>
+            <option>April</option><option>May</option><option>June</option>
+            <option>July</option><option>August</option><option>September</option>
+            <option>October</option><option>November</option><option>December</option>
+        </select>
+
+        <label>Arrival Week Number:</label>
+        <input type="number" name="arrival_date_week_number" >
+
+        <label>Arrival Day of Month:</label>
+        <input type="number" name="arrival_date_day_of_month" >
+
+        <label>Stays in Weekend Nights:</label>
+        <input type="number" name="stays_in_weekend_nights" >
+
+        <label>Stays in Week Nights:</label>
+        <input type="number" name="stays_in_week_nights" >
+
+        <label>Adults:</label>
+        <input type="number" name="adults" >
+
+        <label>Children:</label>
+        <input type="number" step="1" name="children" >
+
+        <label>Babies:</label>
+        <input type="number" name="babies" >
+
+        <label>Meal Type:</label>
+        <select name="meal">
+            <option>BB</option><option>FB</option><option>HB</option><option>SC</option>
+        </select>
+
+        <label>Market Segment:</label>
+        <select name="market_segment">
+            <option>Direct</option><option>Online TA</option><option>Offline TA/TO</option><option>Corporate</option>
+        </select>
+
+        <label>Distribution Channel:</label>
+        <select name="distribution_channel">
+            <option>Direct</option><option>TA/TO</option><option>Corporate</option>
+        </select>
+
+        <label>Is Repeated Guest:</label>
+        <select name="is_repeated_guest">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <label>Previous Cancellations:</label>
+        <input type="number" name="previous_cancellations" >
+
+        <label>Previous Bookings Not Canceled:</label>
+        <input type="number" name="previous_bookings_not_canceled" >
+
+        <label>Reserved Room Type:</label>
+        <input type="text" name="reserved_room_type" >
+
+        <label>Deposit Type:</label>
+        <select name="deposit_type">
+            <option>No Deposit</option><option>Non Refund</option><option>Refundable</option>
+        </select>
+
+        <label>Customer Type:</label>
+        <select name="customer_type">
+            <option>Transient</option><option>Contract</option><option>Group</option><option>Transient-Party</option>
+        </select>
+
+        <label>ADR (Average Daily Rate):</label>
+        <input type="number" step="1" name="adr" >
+
+        <label>Required Car Parking Spaces:</label>
+        <input type="number" name="required_car_parking_spaces" >
+
+        <label>Total of Special Requests:</label>
+        <input type="number" name="total_of_special_requests" >
+
+        <button type="submit">Predict Cancellation</button>
+    </form>
+</body>
+</html>
